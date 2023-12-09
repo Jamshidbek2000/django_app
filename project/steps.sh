@@ -128,3 +128,28 @@ python manage.py startapp base # inside of studybud, base is an app name, it wil
 # </div>
 #--------------------------------------------
 
+
+# # ----------- STEP 14 -------------------- 56min
+# to structure it in a better way, created folders
+# /base/templates/base and moved home.html from 
+# studybud/templates/ to base/templates/base
+# And to make the code know where that file is
+# change base/views.py
+#--------------------------------------------
+# def home(request):
+# 	context = {'rooms': rooms}
+# 	return render(request, 'base/home.html', context)
+#--------------------------------------------
+# and do the same with room.html
+
+
+# # ----------- STEP 15 -------------------- 58min
+# to be able to go into rooms, go into base/urls.py
+#--------------------------------------------
+# urlpatterns = [
+# 	path('', views.home, name="home"),
+# 	path('room/<str:pk>/s', views.room, name="room"),
+# ]
+#--------------------------------------------
+# and now we should make the function room() accept the other var
+
