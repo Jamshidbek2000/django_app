@@ -13,6 +13,7 @@ all:
 exec:
 	docker exec -it tutorial1_container bash
 
+
 up:
 	docker-compose up
 dwn:

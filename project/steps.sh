@@ -98,7 +98,16 @@ python manage.py startapp base # inside of studybud, base is an app name, it wil
 # # ----------- STEP 11 --------------------
 # create main.html which will be a wrapper for other files
 # and creat DOCTYPE stlye
-# after put this to ites body
+# after put this to it's body
+#--------------------------------------------
+#	{% include 'navbar.html' %}
 # 	{% block content %}
 
 # 	{% endblock %}
+#--------------------------------------------
+# don't forget to delete navbar part from other html files
+
+
+# # ----------- STEP 12 --------------------
+# modify home.html by adding
+# {% extends 'main.html' %}
