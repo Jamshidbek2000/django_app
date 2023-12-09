@@ -108,6 +108,23 @@ python manage.py startapp base # inside of studybud, base is an app name, it wil
 # don't forget to delete navbar part from other html files
 
 
-# # ----------- STEP 12 --------------------
+# # ----------- STEP 12 -------------------- 47min
 # modify home.html by adding
 # {% extends 'main.html' %}
+
+
+# # ----------- STEP 13 -------------------- 51min
+# added list of rooms in base/views.py which we will pass 
+# to home.html file for rendering
+#--------------------------------------------
+# <div>
+# 	<div>
+# 		{% for room in rooms %}
+# 		<div>
+# 			<h5>{{room.id}} -- {{room.name}}</h5>
+# 		</div>
+# 		{% endfor %}
+# 	</div>
+# </div>
+#--------------------------------------------
+
