@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  django:
+    container_name: tutorial1_container
+    build:
+      context: ./dockerfiles/django/
+      dockerfile: Dockerfile
+    image: tutorial1_image
+    volumes:
+      - ${PWD}:/app/
+    ports:
+      - "8000:8000"
