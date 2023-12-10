@@ -168,3 +168,52 @@ python manage.py startapp base # inside of studybud, base is an app name, it wil
 #--------------------------------------------
 # <h5>{{room.id}} -- <a href="/room/{{room.id}}">{{room.name}}</a></h5>
 #--------------------------------------------
+
+
+
+
+# # ----------- STEP 17 -------------------- 01h 05m
+# python manage.py migrate 
+# execute for the first time
+# in base/models.py 
+#--------------------------------------------
+# class Room(models.Model):
+# 	# host =
+# 	# topic =
+# 	name = models.CharField(max_length=200)
+# 	description = models.TextField(null=True, blank=True)
+# 	# participants = 
+# 	updated = models.DateTimeField(auto_now=True)
+# 	created = models.DateTimeField(auto_now_add=True)
+# 	def __str__(self):
+# 		return self.name
+#--------------------------------------------
+# this is going to create a table inside db
+# python manage.py makemigrations
+# to apply new class added then
+# python manage.py migrate
+# again, to commit the changes
+
+# create first and new superuser to access db
+# python3 manange.py createsuperuser
+
+# update base/admin.py
+#--------------------------------------------
+# from .models import Room
+# admin.site.register(Room)
+#--------------------------------------------
+
+# now, it's time to get rooms from db and show on website
+# change base/views.py
+#--------------------------------------------
+# from .models import Room
+# def home(request):
+# 	rooms = Room.objects.all()
+# 	context = {'rooms': rooms}
+# 	return render(request, 'base/home.html', context)
+
+# def room(request, pk):
+# 	room = Room.objects.get(id=pk)
+# 	context = {'room' : room}
+# 	return render(request, 'base/room.html', context)
+#--------------------------------------------
