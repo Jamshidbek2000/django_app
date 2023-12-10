@@ -10,12 +10,19 @@ cd studybud
 python ./project/studybud/manage.py runserver 0.0.0.0:8000
 # moved env dir into studybud. But have to change its creation in Dockerfile
 
+#=============================================
+urls.py - all the routing is handled here. when someone visits some url, this will handle it
+wsgi.py - is a server
+models.py - takes care of db
+#=============================================
+
 # # ----------- STEP 1 ---------------------
 python manage.py startapp base # inside of studybud, base is an app name, it will create an app
 # # ----------- STEP 2 ---------------------
 # server doesn't know about the project yet, so we need to let it know by
 # going to studybud/settings.py, find INSTALLED_APPS and add
 # 'base.apps.BaseConfig',
+# this is going to connect new app to the project
 
 # # ----------- STEP 3 ---------------------
 # go into studybud/urls.py and make it:
@@ -153,3 +160,11 @@ python manage.py startapp base # inside of studybud, base is an app name, it wil
 #--------------------------------------------
 # and now we should make the function room() accept the other var
 
+
+
+# # ----------- STEP 16 -------------------- 58min
+# click on room names to get to /room/1...
+# in home.html
+#--------------------------------------------
+# <h5>{{room.id}} -- <a href="/room/{{room.id}}">{{room.name}}</a></h5>
+#--------------------------------------------
