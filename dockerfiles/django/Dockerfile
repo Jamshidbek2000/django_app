@@ -20,4 +20,4 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 EXPOSE 8000
 
 # Start with an empty CMD, you can override this in docker-compose or when running the container
-CMD ["tail", "-f", "/dev/null"]
+CMD ["python", "./project/studybud/manage.py", "runserver", "0.0.0.0:8000"]

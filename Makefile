@@ -7,8 +7,7 @@ build:
 	docker exec -it tutorial1_container bash
 
 all:
-	docker-compose up --build -d && \
-	docker exec -it tutorial1_container bash
+	docker-compose up --build
 
 exec:
 	docker exec -it tutorial1_container bash
